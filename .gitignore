@@ -1,0 +1,14 @@
+# Python (por el entorno virtual)
+venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# DuckDB
+db/*.duckdb
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
