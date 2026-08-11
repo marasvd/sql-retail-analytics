@@ -52,7 +52,10 @@ CREATE TABLE pedidos (
     importe DECIMAL,
     estado VARCHAR
 );
-CREATE TABLE linea_pedidos (
+
+DROP TABLE IF EXISTS linea_pedidos;
+
+CREATE TABLE lineas_pedidos (
     id INTEGER PRIMARY KEY,
     pedido_id INTEGER REFERENCES pedidos(id),
     producto_id INTEGER REFERENCES productos(id),
