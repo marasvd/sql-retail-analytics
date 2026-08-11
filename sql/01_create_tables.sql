@@ -53,9 +53,9 @@ CREATE TABLE pedidos (
     estado VARCHAR
 );
 
-DROP TABLE IF EXISTS linea_pedidos;
+DROP TABLE IF EXISTS lineas_pedidos;
 
-CREATE TABLE lineas_pedidos (
+CREATE TABLE lineas_pedido (
     id INTEGER PRIMARY KEY,
     pedido_id INTEGER REFERENCES pedidos(id),
     producto_id INTEGER REFERENCES productos(id),
