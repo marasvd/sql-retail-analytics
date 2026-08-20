@@ -34,7 +34,6 @@ Representa las órdenes realizadas por los clientes.
 
 Relaciones:
 - Pertenece a un cliente.
-- Es gestionado por un vendedor.
 
 ---
 
@@ -54,7 +53,7 @@ Contiene la información general del personal.
 ---
 
 ### Vendedores
-Representa empleados con función comercial.
+Representa una funcion aparte es algo que no tiene relacion alguna con nada mas
 
 Relación:
-Empleado 1 ---- 0..1 Vendedor
+no hay
