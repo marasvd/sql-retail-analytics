@@ -37,28 +37,25 @@ CREATE TABLE productos (
 DROP TABLE IF EXISTS vendedores;
 CREATE TABLE vendedores (
     id INTEGER PRIMARY KEY,
-    empleado_id INTEGER REFERENCES empleados(id),
     equipo VARCHAR,
     categoria VARCHAR,
     ventas DECIMAL
 );
 
 --- termine las tablas con dependencia simples,  o sea seguimos  las que tienen mas claves foraneas----
+DROP TABLE IF EXISTS lineas_pedido;
+DROP TABLE IF EXISTS pedidos;
 CREATE TABLE pedidos (
     id INTEGER PRIMARY KEY,
     cliente_id INTEGER REFERENCES clientes(id),
-    vendedor_id INTEGER REFERENCES vendedores(id),
     fecha DATE,
     importe DECIMAL,
     estado VARCHAR
 );
-
-DROP TABLE IF EXISTS lineas_pedidos;
-
 CREATE TABLE lineas_pedido (
     id INTEGER PRIMARY KEY,
-    pedido_id INTEGER REFERENCES pedidos(id),
     producto_id INTEGER REFERENCES productos(id),
+    pedido_id INTEGER REFERENCES pedidos(id),
     cantidad INT,
     precio_unitario DECIMAL
 );
