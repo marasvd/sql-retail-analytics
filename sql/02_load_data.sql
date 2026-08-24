@@ -26,6 +26,11 @@ INSERT INTO pedidos (id, cliente_id, fecha, importe, estado)
 SELECT id, cliente_id, fecha, importe, estado
 FROM read_csv('data/raw/pedidos.csv');
 
+INSERT INTO lineas_pedido (id, pedido_id, producto_id, cantidad, precio_unitario)
+SELECT id, pedido_id, producto_id, cantidad, precio_unitario
+FROM read_csv('data/raw/pedidos.csv');
+
+
 INSERT INTO productos(id, categoria_id, nombre, precio, stock)
 SELECT id, categoria_id, nombre, precio, stock
 FROM read_csv('data/raw/productos.csv');
