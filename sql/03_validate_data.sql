@@ -106,3 +106,6 @@ SELECT c.nombre, p.fecha
 FROM clientes c
 LEFT JOIN  pedidos p
 ON c.id = p.id;
+
+SELECT COUNT(*) FROM lineas_pedido;
+SELECT COUNT(*) FROM productos;
