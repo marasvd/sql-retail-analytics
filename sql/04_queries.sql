@@ -100,3 +100,12 @@ WHERE c.es_vip = TRUE
 GROUP BY cliente_vip
 ORDER BY total DESC
 LIMIT 5;
+
+--¿Qué productos tienen stock bajo pero alta demanda?--
+SELECT pr.nombre AS producto, pr.stock AS stock, SUM(lp.cantidad) AS unidades_vendidas
+FROM productos pr
+INNER JOIN lineas_pedido lp
+ON pr.id = lp.producto_id
+GROUP BY pr.id, pr.nombre, pr.stock
+ORDER BY unidades_vendidas DESC, stock ASC
+LIMIT 5;
